@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ 
+    <title>Hello, world!</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    padding: 50px;
+    color: blue;
+    font-size: 35px;
+
+}
+.container{
+    height:500px;
+    width: 100%;
+    border:10px groove red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    
+}
+
+.container .box{
+    height:200px;
+    width: 200px;
+    border: 5px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    margin-left:50px;
+    margin-right:50px;
+    border-radius: 50%;
+    
+}
+
+.container .box a{
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* CSS FOR ADMIN PANNEL */
+
+    </style>
+  </head>
+  <body>
+    <h1>Event Management System</h1>
+
+    <div class="container">
+        <div class="box">
+            <a href="#" >Vendor</a>
+        </div>
+        <div class="box">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#admin-modal">Admin</a>
+        </div>
+        <div class="box">
+            <a href="#">User</a>
+        </div>
+    </div>
+
+    <!-- Modal For Admin Login -->
+    <div class="modal fade" id="admin-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Event Management System</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'index' %}" method="POST">
+					{% csrf_token %}
+					<div class="mb-3">
+						<input type="text" name="user" class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp" placeholder="Username" required />
+					</div>
+					<div class="mb-3">
+						<input type="password" name="pass" class="form-control" id="exampleInputPassword1"
+							placeholder="Password" required />
+					</div>
+
+					<div class="modal-footer">
+                        <div class="mb-3"><a href="#" data-bs-toggle="modal" data-bs-target="#admin-signup-modal">If You Are Not an Admin >>> Sign Up </a></div> <br>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Login</button>
+                      </div>
+				</form>
+	
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    
+    <!-- modal for sign up -->
+
+    <div class="modal fade" id="admin-signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Event Management System</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'index' %}" method="POST">
+					{% csrf_token %}
+					<div class="mb-3">
+						<input type="text" name="adminname" class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp" placeholder="Enter Your Name" required />
+					</div>
+
+                    <div class="mb-3">
+						<input type="email" name="email" class="form-control" id="exampleInputPassword1"
+							placeholder="Enter Your Email" required />
+					</div>
+					<div class="mb-3">
+						<input type="password" name="pass" class="form-control" id="exampleInputPassword1"
+							placeholder="Password" required />
+					</div>
+
+                    <div class="mb-3">
+                            <select name="Category" id="" class="form-control">
+                                <option value="" selected disabled>--Select Category--</option>
+                                <option value="Catering">Catering</option>
+                                <option value="Decoration">Decoration</option>
+                                <option value="Flowering">Flowering</option>
+                                <option value="Lighting">Lighting</option>
+                            </select>
+					</div>
+
+					<div class="modal-footer">
+                        <div class="mb-3"><a href="#" data-bs-toggle="modal" data-bs-target="#admin-modal">If You Have an Admin Account >>> Login </a></div> <br>
+                        <button type="button" class="btn btn-primary">Sing Up</button>
+                      </div>
+				</form>
+	
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
+  </body>
+</html>

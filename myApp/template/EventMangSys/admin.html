@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Admin Pannel</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            height: 60vh;
+            width: 60vw;
+            border: 2px solid black;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #efefef;
+        }
+        .container .nav{
+            height: 10%;
+            padding: 40px;
+            display: flex;
+            justify-content:space-between;
+            font-size: 30px;     
+        }
+        .container .heading{
+            text-align: center;
+            padding: 15px;
+            font-size: 40px;
+        }
+        .container .buttons{
+            display: flex;
+            padding: 50px;
+            justify-content: center;
+            gap: 80px;
+            font-size: 35px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="nav">
+            <div class="a">Home</div>
+            <div class="a">Logout</div>
+        </div>
+        <div class="heading">
+            Welcome Admin
+        </div>
+        <div class="buttons">
+            <div> <a href="#">Maintain Vendor</a></div>
+            <div> <a href="#">Maintain User</a></div>
+        </div>
+    </div>
+
+    
+  </body>
+</html>

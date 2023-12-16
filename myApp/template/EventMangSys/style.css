@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    padding: 50px;
+    color: blue;
+    font-size: 35px;
+
+}
+.container{
+    height:500px;
+    width: 100%;
+    border:10px groove red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    
+}
+
+.container .box{
+    height:200px;
+    width: 200px;
+    border: 5px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    margin-left:50px;
+    margin-right:50px;
+    border-radius: 50%;
+    
+}
+
+.container .box a{
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* CSS FOR ADMIN PANNEL */
+
